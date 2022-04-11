@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">V LandScaper</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="text_buy">Buy</string>
+    <string name="text_landscaping">Landscaping</string>
+    <string name="text_landscape">Landscaping</string>
+    <string name="title1_navigation">Profile</string>
+    <string name="title2_navigation">Home</string>
+    <string name="title3_navigation">Buy</string>
+    <string name="title4_navigation">Landscaping</string>
+    <string name="title5_navigation">Contact Us</string>
+    <string name="title6_navigation">Settings</string>
+    <string name="title7_navigation">Log Out</string>
+    <string name="title8_navigation">Cart</string>
+    <string name="title_description">V landscaper has features of auto and manual landscaping. User can buy plants
+    and related accessories </string>
+    <string name="title_welcome">Welcome to V Landscaper</string>
+
+    <string name="first_slide">Buy</string>
+    <string name="second_slide">Fast Delivery</string>
+    <string name="third_slide">Landscaping</string>
+    <string name="description1">Buy plants and plant related accessories</string>
+    <string name="description2">We deliver your plants at your door step </string>
+    <string name="description3">Here you can do manual as well as auto landscaping</string>
+    <string name="rePassword">Re-Enter Password</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="name">User Name</string>
+    <string name="signup">Sign Up</string>
+    <string name="already">Already have an account  .</string>
+    <string name="donot">Do not have an account  </string>
+    <string name="signin">Sign In</string>
+    <string name="txtMake">Make Your Envirnoment Green</string>
+    <string name="txtHomeDes">Even if the Resurrection were established upon one of you while
+        he has in his hand a sapling, let him plant it.</string>
+    <string name="title_landscaping">Do Auto and Manual Landscaping</string>
+    <string name="title_landscaping1">Decorate Your Surrounding</string>
+    <string name="title_autoLandscaping">Auto Landscaping</string>
+    <string name="title_manualLanscaping">Manual Landscaping</string>
+    <string name="title_forget">Forget Password??</string>
+    <string name="title_resetPass">Reset Password</string>
+    <string name="title_price">Price</string>
+    <string name="txtPrice">500</string>
+    <string name="title_flower">Jasmine</string>
+    <string name="title_quantity">Quantity</string>
+    <string name="title_btnCart">Add To Cart</string>
+</resources>

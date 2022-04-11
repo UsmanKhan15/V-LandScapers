@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1063383612627",
+    "project_id": "v-landscaper",
+    "storage_bucket": "v-landscaper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1063383612627:android:bc83ccfc7433f02fe96826",
+        "android_client_info": {
+          "package_name": "com.example.vlandscaper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1063383612627-j0sebs1t0glofhppjcll4g7h7b0jjfvd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVHZ5CeY0ZTUsKpnanhUkK4jGCquyBXdU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1063383612627-j0sebs1t0glofhppjcll4g7h7b0jjfvd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
