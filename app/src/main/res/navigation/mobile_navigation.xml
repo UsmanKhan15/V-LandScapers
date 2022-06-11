@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/navigation_buy"
-        android:name="com.example.vlandscaper.ui.dashboard.DashboardFragment"
+        android:name="com.example.vlandscaper.ui.buy.DashboardFragment"
         android:label="@string/text_buy"
         tools:layout="@layout/fragment_dashboard" />
 

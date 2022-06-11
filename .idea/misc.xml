@@ -4,28 +4,37 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android Development/VLandScaper/app/src/main/res/drawable/edit_text_bg.xml" value="0.22552083333333334" />
+        <entry key="..\:/Android Development/VLandScaper/app/src/main/res/drawable/ic_baseline_shopping_cart.xml" value="0.135" />
         <entry key="..\:/Android Development/VLandScaper/app/src/main/res/drawable/ic_baseline_shopping_cart_24.xml" value="0.1415" />
+        <entry key="..\:/Android Development/VLandScaper/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.135" />
         <entry key="..\:/Android Development/VLandScaper/app/src/main/res/drawable/text_bg.xml" value="0.11614583333333334" />
         <entry key="..\:/Android Development/VLandScaper/app/src/main/res/drawable/text_bg1.xml" value="0.7964285714285714" />
         <entry key="..\:/Android Development/VLandScaper/app/src/main/res/font/.xml" value="0.23958333333333334" />
-        <entry key="..\:/Android Development/VLandScaper/app/src/main/res/layout/activity_cart.xml" value="0.209375" />
+        <entry key="..\:/Android Development/VLandScaper/app/src/main/res/layout/activity_cart.xml" value="0.22" />
+        <entry key="..\:/Android Development/VLandScaper/app/src/main/res/layout/activity_detail_home.xml" value="0.1953125" />
+        <entry key="..\:/Android Development/VLandScaper/app/src/main/res/layout/activity_detail_item.xml" value="0.209375" />
         <entry key="..\:/Android Development/VLandScaper/app/src/main/res/layout/activity_forget_password.xml" value="0.209375" />
         <entry key="..\:/Android Development/VLandScaper/app/src/main/res/layout/activity_login.xml" value="0.209375" />
         <entry key="..\:/Android Development/VLandScaper/app/src/main/res/layout/activity_main.xml" value="0.209375" />
+        <entry key="..\:/Android Development/VLandScaper/app/src/main/res/layout/activity_notification.xml" value="0.22" />
         <entry key="..\:/Android Development/VLandScaper/app/src/main/res/layout/activity_on_boarding.xml" value="0.209375" />
         <entry key="..\:/Android Development/VLandScaper/app/src/main/res/layout/activity_profile.xml" value="0.209375" />
         <entry key="..\:/Android Development/VLandScaper/app/src/main/res/layout/activity_registration.xml" value="0.209375" />
         <entry key="..\:/Android Development/VLandScaper/app/src/main/res/layout/cart_item_activity.xml" value="0.209375" />
+        <entry key="..\:/Android Development/VLandScaper/app/src/main/res/layout/cart_last_item.xml" value="0.209375" />
         <entry key="..\:/Android Development/VLandScaper/app/src/main/res/layout/first_item_activity.xml" value="0.209375" />
         <entry key="..\:/Android Development/VLandScaper/app/src/main/res/layout/first_item_dashboard_activity.xml" value="0.209375" />
         <entry key="..\:/Android Development/VLandScaper/app/src/main/res/layout/fragment_dashboard.xml" value="0.209375" />
         <entry key="..\:/Android Development/VLandScaper/app/src/main/res/layout/fragment_home.xml" value="0.209375" />
         <entry key="..\:/Android Development/VLandScaper/app/src/main/res/layout/fragment_notifications.xml" value="0.209375" />
         <entry key="..\:/Android Development/VLandScaper/app/src/main/res/layout/item_activity.xml" value="0.209375" />
-        <entry key="..\:/Android Development/VLandScaper/app/src/main/res/layout/item_activity_buy.xml" value="0.5" />
+        <entry key="..\:/Android Development/VLandScaper/app/src/main/res/layout/item_activity_buy.xml" value="0.33" />
+        <entry key="..\:/Android Development/VLandScaper/app/src/main/res/layout/notification_item_activity.xml" value="0.21979166666666666" />
+        <entry key="..\:/Android Development/VLandScaper/app/src/main/res/layout/quantity_dialog_activity.xml" value="0.209375" />
         <entry key="..\:/Android Development/VLandScaper/app/src/main/res/layout/sliding_layout.xml" value="0.209375" />
         <entry key="..\:/Android Development/VLandScaper/app/src/main/res/menu/bottom_nav_menu.xml" value="0.209375" />
         <entry key="..\:/Android Development/VLandScaper/app/src/main/res/menu/navigation_drawer.xml" value="0.209375" />
+        <entry key="..\:/Android Development/VLandScaper/app/src/main/res/menu/popup_menu.xml" value="0.209375" />
       </map>
     </option>
   </component>

@@ -1,6 +1,7 @@
 package com.example.vlandscaper.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.vlandscaper.R;
+import com.example.vlandscaper.activities.DetailHomeActivity;
+import com.example.vlandscaper.activities.DetailItem;
 import com.example.vlandscaper.utilClasses.Home;
 
 import java.util.ArrayList;
@@ -55,37 +58,25 @@ public class HomeRecViewAdapter extends RecyclerView.Adapter<HomeRecViewAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull HomeRecViewAdapter.MyViewHolder holder, int position) {
-        if(position == 0)
+        if(holder.getAdapterPosition() == 0)
         {
-            Home user = list.get(position);
+            Home user = list.get(holder.getAdapterPosition());
             holder.txtTitle.setText(user.getTitle());
             holder.txtDescription.setText(user.getDescription());
         }
         else
         {
-            Home user = list.get(position);
+            Home user = list.get(holder.getAdapterPosition());
+            int pos = list.size();
             holder.title.setText(user.getTitle());
             holder.description.setText(user.getDescription());
             Glide.with(holder.imgURL.getContext()).load(user.getImgURL()).into(holder.imgURL);
             holder.cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(user.getTitle().equals("Our Products"))
-                    {
-                        Toast.makeText(context, "Our Products", Toast.LENGTH_SHORT).show();
-                    }
-                    else if(user.getTitle().equals("Our Services"))
-                    {
-                        Toast.makeText(context, "Our Services", Toast.LENGTH_SHORT).show();
-                    }
-                    else if (user.getTitle().equals("Make Green"))
-                    {
-                        Toast.makeText(context, "Make Green", Toast.LENGTH_SHORT).show();
-                    }
-                    else if(user.getTitle().equals("About Us"))
-                    {
-                        Toast.makeText(context, "About Us", Toast.LENGTH_SHORT).show();
-                    }
+                    Intent intent = new Intent(context, DetailHomeActivity.class);
+                    intent.putExtra("details", list.get(holder.getAdapterPosition()));
+                    context.startActivity(intent);
                 }
             });
         }

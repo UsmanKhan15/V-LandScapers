@@ -1,29 +1,23 @@
-package com.example.vlandscaper.ui.dashboard;
+package com.example.vlandscaper.ui.buy;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SearchView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.vlandscaper.R;
 import com.example.vlandscaper.adapters.BuyRecViewAdapter;
-import com.example.vlandscaper.adapters.HomeRecViewAdapter;
 import com.example.vlandscaper.databinding.FragmentDashboardBinding;
-import com.example.vlandscaper.databinding.FragmentHomeBinding;
 import com.example.vlandscaper.utilClasses.Buy;
-import com.example.vlandscaper.utilClasses.Home;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,7 +25,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class DashboardFragment extends Fragment {
 
@@ -45,6 +38,8 @@ public class DashboardFragment extends Fragment {
     DatabaseReference databaseReference;
     BuyRecViewAdapter adapter;
     SearchView searchView;
+    private Button btnOk;
+    int q;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -52,6 +47,9 @@ public class DashboardFragment extends Fragment {
         View root = binding.getRoot();
         recyclerView = root.findViewById(R.id.dashboardRecView);
         searchView = root.findViewById(R.id.search);
+        edtQuantity = root.findViewById(R.id.edtQuantityy);
+        btnOk = root.findViewById(R.id.btnQuantity);
+
         //edtQuantity = root.findViewById(R.id.edtQuantityy);
         recyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));
         databaseReference = FirebaseDatabase.getInstance().getReference("saleAndBuyData");
@@ -97,6 +95,25 @@ public class DashboardFragment extends Fragment {
             });
         }
         return root;
+    }
+
+    public int popUp() {
+        AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
+        View mView = getLayoutInflater().inflate(R.layout.quantity_dialog_activity, null);
+
+        alert.setView(mView);
+        final AlertDialog alertDialog = alert.create();
+        alertDialog.setCanceledOnTouchOutside(false);
+
+        btnOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String quan = edtQuantity.getText().toString();
+                q = Integer.parseInt(quan);
+            }
+        });
+        alert.show();
+        return q;
     }
 
     /*

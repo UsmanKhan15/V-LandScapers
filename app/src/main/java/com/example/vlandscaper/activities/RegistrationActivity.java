@@ -15,11 +15,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.vlandscaper.R;
+import com.example.vlandscaper.utilClasses.UserData;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import java.util.Calendar;
 
 import java.util.*;
 
@@ -29,9 +33,10 @@ public class RegistrationActivity extends AppCompatActivity {
     private EditText edtName, edtEmail, edtPass, edtRePass;
     private Button signUp;
     private TextView txtSignIn;
+    private FirebaseDatabase database;
     private FirebaseAuth firebaseAuth;
-
     SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +53,8 @@ public class RegistrationActivity extends AppCompatActivity {
         signUp = findViewById(R.id.btnSignUp);
         txtSignIn = findViewById(R.id.txtSignInRegister);
         firebaseAuth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
+        DatabaseReference reference = database.getReference();
 
         /*
         If user is using application first time
@@ -117,6 +124,9 @@ public class RegistrationActivity extends AppCompatActivity {
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 if(task.isSuccessful())
                                                 {
+                                                    Date currentTime = Calendar.getInstance().getTime();
+                                                    UserData userData = new UserData(edtEmail.getText().toString(), edtName.getText().toString(), currentTime.toString());
+                                                    database.getReference().child("users").child(edtName.getText().toString()).setValue(userData);
                                                     Toast.makeText(RegistrationActivity.this, "Please verify email... Email has been send successfully", Toast.LENGTH_SHORT).show();
                                                     startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
                                                     finish();

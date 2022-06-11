@@ -1,27 +1,37 @@
 package com.example.vlandscaper.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.vlandscaper.R;
+import com.example.vlandscaper.activities.CartActivity;
 import com.example.vlandscaper.utilClasses.Buy;
+import com.example.vlandscaper.utilClasses.CartData;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
 public class CartRecViewAdapter extends RecyclerView.Adapter<CartRecViewAdapter.MyViewHolder> {
 
     private Context context;
-    ArrayList<Buy> list;
+    ArrayList<CartData> listCart;
 
-    public CartRecViewAdapter(Context context, ArrayList<Buy> list) {
+    public CartRecViewAdapter(Context context, ArrayList<CartData> listCart) {
         this.context = context;
-        this.list = list;
+        this.listCart = listCart;
     }
 
     @NonNull
@@ -33,16 +43,15 @@ public class CartRecViewAdapter extends RecyclerView.Adapter<CartRecViewAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull CartRecViewAdapter.MyViewHolder holder, int position) {
-        Buy buy = list.get(position);
-        holder.itemTitle.setText(buy.getTitlePlantAccessories());
-        //holder.itemTotal.setText(buy.getPrice()+"");
-        holder.itemPrice.setText(buy.getTotalPrice()+"");
-        //holder.itemTotal.setText(buy.getQuantity()+"");
+        CartData cartData = listCart.get(position);
+        holder.itemTitle.setText(cartData.getTitlePlantA() + "");
+        holder.itemPrice.setText(cartData.getPrice() + "");
+        holder.itemTotalPrice.setText(cartData.getTotalPrice() + "");
+        holder.itemTotal.setText(cartData.getQuantity() + "");
     }
-
     @Override
     public int getItemCount() {
-        return list.size();
+        return listCart.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
@@ -54,7 +63,7 @@ public class CartRecViewAdapter extends RecyclerView.Adapter<CartRecViewAdapter.
             itemTitle = itemView.findViewById(R.id.txtTitleItem);
             itemPrice = itemView.findViewById(R.id.txtItemPrice);
             itemTotalPrice = itemView.findViewById(R.id.txtTotalItemPrice);
-            //itemTotal = itemPrice.findViewById(R.id.txtQuantity);
+            itemTotal = itemView.findViewById(R.id.txtQuant);
         }
     }
 }

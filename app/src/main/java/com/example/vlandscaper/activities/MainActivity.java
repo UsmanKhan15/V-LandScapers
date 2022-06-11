@@ -7,21 +7,16 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.example.vlandscaper.R;
-import com.example.vlandscaper.ui.dashboard.DashboardFragment;
-import com.example.vlandscaper.ui.home.HomeFragment;
-import com.example.vlandscaper.ui.notifications.NotificationsFragment;
+import com.example.vlandscaper.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.vlandscaper.databinding.ActivityMainBinding;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
@@ -71,9 +66,13 @@ public class MainActivity extends AppCompatActivity {
             case R.id.item2:
                 firebaseAuth.signOut();
                 startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                finish();
                 return true;
             case R.id.item3:
                 startActivity(new Intent(MainActivity.this, CartActivity.class));
+                return true;
+            case R.id.item4:
+                startActivity(new Intent(MainActivity.this, NotificationActivity.class));
                 return true;
         }
         return super.onOptionsItemSelected(item);

@@ -1,6 +1,8 @@
 package com.example.vlandscaper.utilClasses;
 
-public class Home {
+import java.io.Serializable;
+
+public class Home implements Serializable {
     String title, description, imgURL;
 
     public Home() {

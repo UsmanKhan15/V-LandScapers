@@ -1,36 +1,30 @@
 package com.example.vlandscaper.utilClasses;
 
-public class Buy {
+import java.io.Serializable;
+
+public class Buy implements Serializable {
 
     String titleHome, category, titlePlantAccessories, imgURL;
+    String description;
     int totalPrice;
     int quantity;
     int price;
     int id;
     public static int idCart = 0;
 
-    String price1, quantity1, totalPrice1;
-
     public Buy() {
+        idCart++;
     }
 
-    public Buy(String titleHome, String category, String titlePlantAccessories, String imgURL, int totalPrice, int quantity, int price, int id) {
+    public Buy(String titleHome, String category, String titlePlantAccessories, String description, String imgURL, int totalPrice, int quantity, int price, int id) {
         this.titleHome = titleHome;
         this.category = category;
         this.titlePlantAccessories = titlePlantAccessories;
+        this.description = description;
         this.imgURL = imgURL;
         this.totalPrice = totalPrice;
         this.quantity = quantity;
         this.price = price;
-        this.id = id;
-    }
-
-    public Buy(String titlePlantAccessories, int price, int quantity, int totalPrice) {
-        this.titlePlantAccessories = titlePlantAccessories;
-        this.totalPrice = totalPrice;
-        this.quantity = quantity;
-        this.price = price;
-        idCart++;
     }
 
     public static String getIdCart() {
@@ -61,6 +55,14 @@ public class Buy {
         this.titlePlantAccessories = titlePlantAccessories;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public String getImgURL() {
         return imgURL;
     }
@@ -69,20 +71,20 @@ public class Buy {
         this.imgURL = imgURL;
     }
 
-    public int getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(int totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
     public int getQuantity() {
         return quantity;
     }
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public int getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(int totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
     public int getPrice() {

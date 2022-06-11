@@ -26,7 +26,7 @@
             android:gravity="center"
             android:padding="3dp"
             android:text="@string/title_flower"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/imgPlantAccessories"
             app:layout_constraintStart_toStartOf="parent"
@@ -91,17 +91,39 @@
             app:layout_constraintTop_toBottomOf="@+id/txtPrice"
             tools:ignore="TouchTargetSizeCheck" />
 
-<!--        <EditText-->
-<!--            android:id="@+id/edtQuantityy"-->
-<!--            android:layout_width="30dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:ems="10"-->
-<!--            android:inputType="number"-->
-<!--            app:layout_constraintBottom_toTopOf="@+id/btnAddToCart"-->
-<!--            app:layout_constraintEnd_toStartOf="@+id/imgPlantAccessories"-->
-<!--            app:layout_constraintStart_toEndOf="@+id/textView3"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/txtTitlePlantAccesories" />-->
-<!--    -->
+        <TextView
+            android:id="@+id/txtQuantityTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:textStyle="bold"
+            android:background="@color/green"
+            android:text="@string/title_quantity"
+            app:layout_constraintBottom_toBottomOf="@+id/txtPrice"
+            app:layout_constraintStart_toEndOf="@+id/txtPrice"
+            app:layout_constraintTop_toTopOf="@+id/txtPrice" />
+
+        <EditText
+            android:id="@+id/edtQuantity"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:inputType="number"
+            app:layout_constraintBottom_toTopOf="@+id/btnAddToCart"
+            app:layout_constraintEnd_toStartOf="@+id/imgPlantAccessories"
+            app:layout_constraintStart_toEndOf="@+id/txtQuantityTitle"
+            app:layout_constraintTop_toTopOf="@+id/txtQuantityTitle"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/totalQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/edtQuantity"
+            app:layout_constraintEnd_toStartOf="@+id/imgPlantAccessories"
+            app:layout_constraintStart_toEndOf="@+id/txtTitlePlantAccesories"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
