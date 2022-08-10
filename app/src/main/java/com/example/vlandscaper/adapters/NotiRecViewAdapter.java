@@ -17,10 +17,10 @@ import java.util.ArrayList;
 public class NotiRecViewAdapter extends RecyclerView.Adapter<NotiRecViewAdapter.MyViewHolder> {
 
     Context context;
-    ArrayList<Notification> list = new ArrayList<>();
-    public NotiRecViewAdapter(Context context, ArrayList<Notification> list) {
+    ArrayList<Notification> listNotification = new ArrayList<>();
+    public NotiRecViewAdapter(Context context, ArrayList<Notification> listNotification) {
         this.context = context;
-        this.list = list;
+        this.listNotification = listNotification;
     }
 
     public NotiRecViewAdapter() {
@@ -35,14 +35,14 @@ public class NotiRecViewAdapter extends RecyclerView.Adapter<NotiRecViewAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Notification notifications = list.get(position);
-        holder.notifiction.setText("You order has been "+notifications.getNotification() + "for more detail Contact at " + 923994993);
+        Notification notifications = listNotification.get(holder.getAdapterPosition());
+        holder.notifiction.setText("You order "+notifications.getNotification() + "for more detail Contact at ");
         holder.time.setText(notifications.getTime());
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return listNotification.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

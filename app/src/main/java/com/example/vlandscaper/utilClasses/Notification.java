@@ -4,7 +4,10 @@ public class Notification {
     private String notification;
     private String time;
 
-    public Notification(String okkk, String s) {
+    public Notification() {
+    }
+
+    public Notification(String notification, String time) {
         this.notification = notification;
         this.time = time;
     }

@@ -2,14 +2,14 @@ package com.example.vlandscaper.utilClasses;
 
 public class Quantity {
     String itemName;
-    int quantity;
+    int quantityQ;
 
     public Quantity() {
     }
 
-    public Quantity(String itemName, int quantity) {
+    public Quantity(String itemName, int quantityQ) {
         this.itemName = itemName;
-        this.quantity = quantity;
+        this.quantityQ = quantityQ;
     }
 
     public String getItemName() {
@@ -20,11 +20,11 @@ public class Quantity {
         this.itemName = itemName;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int getQuantityQ() {
+        return quantityQ;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setQuantityQ(int quantity) {
+        this.quantityQ = quantity;
     }
 }

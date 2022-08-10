@@ -15,6 +15,12 @@ public class CartData {
         this.quantity = quantity;
     }
 
+    public CartData(String titlePlantA, int price, int quantity) {
+        this.titlePlantA = titlePlantA;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
     public CartData() {
     }
 

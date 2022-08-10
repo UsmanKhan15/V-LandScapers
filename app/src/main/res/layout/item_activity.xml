@@ -16,7 +16,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="170dp">
+            android:layout_height="200dp">
 
             <TextView
                 android:id="@+id/txtTitle"
@@ -37,7 +37,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/abeezee_italic"
                 android:paddingLeft="10dp"
-                android:textColor="@color/black"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@+id/imgPlantAccessories"
                 app:layout_constraintEnd_toStartOf="@+id/imgPlantAccessories"

@@ -53,7 +53,7 @@ public class DashboardFragment extends Fragment {
         //edtQuantity = root.findViewById(R.id.edtQuantityy);
         recyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));
         databaseReference = FirebaseDatabase.getInstance().getReference("saleAndBuyData");
-        list = new ArrayList<>();
+        list = new ArrayList<>(0);
 
         if(databaseReference != null)
         {
@@ -97,24 +97,6 @@ public class DashboardFragment extends Fragment {
         return root;
     }
 
-    public int popUp() {
-        AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
-        View mView = getLayoutInflater().inflate(R.layout.quantity_dialog_activity, null);
-
-        alert.setView(mView);
-        final AlertDialog alertDialog = alert.create();
-        alertDialog.setCanceledOnTouchOutside(false);
-
-        btnOk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String quan = edtQuantity.getText().toString();
-                q = Integer.parseInt(quan);
-            }
-        });
-        alert.show();
-        return q;
-    }
 
     /*
     Defining search function

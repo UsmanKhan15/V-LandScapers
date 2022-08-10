@@ -5,21 +5,31 @@ public class OrderPlace {
     String totalAmount;
     String totalItems;
     String itemNames;
-    String userEmail;
+    String userName;
+    String pushId;
 
-    public OrderPlace(String totalAmount, String totalItems, String itemNames, String userEmail) {
+    public OrderPlace(String totalAmount, String totalItems, String itemNames, String userName, String pushId) {
         this.totalAmount = totalAmount;
         this.totalItems = totalItems;
         this.itemNames = itemNames;
-        this.userEmail = userEmail;
+        this.userName = userName;
+        this.pushId = pushId;
     }
 
-    public String getUserEmail() {
-        return userEmail;
+    public String getPushId() {
+        return pushId;
     }
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getTotalAmount() {

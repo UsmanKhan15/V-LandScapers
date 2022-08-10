@@ -9,6 +9,10 @@ public class UserData {
         this.date = date;
     }
 
+    public UserData(String userName) {
+        this.userName = userName;
+    }
+
     public UserData() {
     }
 

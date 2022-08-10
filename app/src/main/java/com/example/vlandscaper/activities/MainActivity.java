@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.vlandscaper.R;
 import com.example.vlandscaper.databinding.ActivityMainBinding;
@@ -18,11 +19,17 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private FirebaseAuth firebaseAuth;
+    private String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +48,29 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
+        /*
+        Getting User Name
+         */
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        DatabaseReference userNameRef;
+        String userId = firebaseAuth.getCurrentUser().getUid();
+        userNameRef = FirebaseDatabase.getInstance().getReference("users").child(userId).child("userName");
+        userNameRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    name = snapshot.getValue().toString();
+                } else {
+                    Toast.makeText(MainActivity.this, "Something went wrong!!! Please check your connection", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     /*
@@ -69,10 +99,13 @@ public class MainActivity extends AppCompatActivity {
                 finish();
                 return true;
             case R.id.item3:
-                startActivity(new Intent(MainActivity.this, CartActivity.class));
+                Intent intent1 = new Intent(MainActivity.this, CartActivity.class);
+                intent1.putExtra("userName", name);
+                startActivity(intent1);
                 return true;
             case R.id.item4:
-                startActivity(new Intent(MainActivity.this, NotificationActivity.class));
+                Intent intent = new Intent(MainActivity.this, NotificationActivity.class);
+                startActivity(intent);
                 return true;
         }
         return super.onOptionsItemSelected(item);
